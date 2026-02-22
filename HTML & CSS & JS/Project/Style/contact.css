@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    background: #e9e9e9;
+    height: 63vh;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+.d2{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+h1 {
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.hours p {
+    margin: 5px 0;
+}
+
+.day {
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.space {
+    margin-top: 25px;
+}
+
+.icon {
+    font-size: 22px;
+    margin-top: 25px;
+    display: block;
+}
+
+.red {
+    color: #c0392b;
+    margin: 8px 0;
+}
+
+.contact p,
+.location p,
+.email p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+
+footer {
+
+    background: #0a0a0ae7;
+
+}
