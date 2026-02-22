@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="atm.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="atm.css">
+</head>
+
+<body>
+    <div class="con">
+        <h2>Welcome To ATM</h2>
+        <h3><span id="user"></span></h3>
+
+        <div id="wf" style="display: block;">
+            <label for="name">Name: </label>
+            <input class="inbox" type="text" name="name" id="euser" placeholder="Enter your name">
+            <label for="pin">PIN: </label>
+            <input class="inbox" type="password" name="pin" id="pin" placeholder="Enter your PIN">
+            <button id="sub" onclick="pin()">Submit</button>
+        </div>
+
+        <div id="cf" style="display: none;">
+            <p> 1. Check Balance </p>
+            <p> 2. Withdraw Cash </p>
+            <p> 3. Deposit Cash </p>
+            <input class="inbox" type="tel" id="choice" placeholder="Enter choice (1, 2, or 3)">
+            <button id="chkbtn" onclick="check()">Submit</button>
+        </div>
+
+        <div id="bf" style="display: none;">
+            <p>Your Balance is: $<span id="balance">0</span></p>
+        </div>
+
+        <div id="withf" style="display: none;">
+            <label for="witha">Enter Withdraw Amount: </label>
+            <input class="inbox" type="tel" name="witha" id="witha" placeholder="">
+            <button onclick="withbtn()">Submit</button>
+        </div>
+
+        <div id="depof" style="display: none;">
+            <label for="depoa">Enter Doposit Amount: </label>
+            <input class="inbox" type="tel" name="depoa" id="depoa" placeholder="">
+            <button onclick="depobtn()">Submit</button>
+        </div>
+        <span id="error"></span>
+    </div>
+
+</body>
+
+</html>

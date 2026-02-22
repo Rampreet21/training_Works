@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .frame {
+            background: #f0f0f0;
+            height: 150px;
+            width: 500px;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 20px;
+        }
+
+        #btn {
+            padding: 5px;
+            margin-left: 20px;
+            color: red;
+            font-size: 15px;
+            font-weight: 800;
+            border: 1px solid rgb(255, 100, 100);
+            border-radius: 5px;
+        }
+
+        #btn:active {
+            background: rgb(255, 122, 122);
+        }
+
+        #btn2,
+        #btn3 {
+            padding: 5px;
+            margin-left: 20px;
+            color: rgb(11, 194, 5);
+            font-size: 15px;
+            font-weight: 800;
+            border: 1px solid rgb(44, 241, 47);
+            border-radius: 5px;
+        }
+
+        #btn2:active {
+            background: rgb(130, 255, 126);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JQuery</h2>
+    <div class="frame">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <p> Nulla deserunt a fuga temporibus, quibusdam rerum voluptate hic vero minus sequi,</p>
+        <p>ullam aut non provident voluptatum asperiores explicabo incidunt dicta atque, similique esse?</p>
+    </div>
+    <button id="btn">HIDE</button>
+    <button id="btn2">SHOW</button>
+    <button id="btn3">HIDE</button>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("p").hide();
+            })
+        })
+
+        $(document).ready(function () {
+            $("#btn2").click(function () {
+                $("p").show();
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btn3").mouseenter(function () {
+                $("p").toggle(1000);
+                let show = document.getElementById("btn3").innerText;
+
+                if (show == "HIDE") {
+                    console.log("HIDE");
+                    document.getElementById("btn3").innerText = "SHOW";
+                }
+            });
+
+            $("#btn3").mouseenter(function () {
+                $("p").toggle(1000);
+                let show = document.getElementById("btn3").innerText;
+
+                if (show == "SHOW") {
+                    console.log("SHOW");
+                    document.getElementById("btn3").innerText = "HIDE";
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
