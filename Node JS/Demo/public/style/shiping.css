@@ -1,0 +1,40 @@
+.main {
+    height: 58vh;
+    background-image: url(../img/shiping.png);
+    background-size: contain;
+}
+
+.bglight {
+    background: #eeeeee52;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(1px);
+}
+
+.logo-content p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.divem {
+    text-align: center;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    color: rgb(69, 69, 69);
+    margin: auto;
+}
+
+.dive1 p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
+}
+
+.dive2 img{
+    margin-bottom: 40px;
+}

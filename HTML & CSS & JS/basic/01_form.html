@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f3f3f3;
+        }
+        h2{
+            text-align: center;
+            font-size: 30px;
+        }
+        form {
+            border: 1px solid #ccc;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0fae00;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #00ce00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Form</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" minlength="3" placeholder="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" min="4" max="150" required placeholder="age">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required placeholder="email">
+
+        <label for="contact">Contact:</label>
+        <input type="tel" pattern="[0-9]{10}" name="contact" placeholder="10-digit number" required>
+
+        <label for="address">Address:</label>
+        <textarea name="address" rows="3" required placeholder="adderss...."></textarea>
+
+        <label for="gender">Gender:</label>
+        <div class="checkbox-group">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+        </div>
+        
+
+        <label>Skills:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="skills" value="html"> HTML</label>
+            <label><input type="checkbox" name="skills" value="js"> JS</label>
+            <label><input type="checkbox" name="skills" value="java"> Java</label>
+            <label><input type="checkbox" name="skills" value="react"> React</label>
+            <label><input type="checkbox" name="skills" value="mern"> MERN</label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

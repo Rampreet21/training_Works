@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = (a) => {return a + a;}
+            console.log(a(2))
+
+    </script>
+    <style>
+        form {
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="fname" class="f1">First name</label>
+        <input type="text" placeholder="Enter you first name" minlength="2"><br><br>
+        <label for="lname" class="f1">Last name</label>
+        <input type="text"><br><br>
+        <label for="email" class="f1">Email</label>
+        <input type="email"><br><br>
+        <label for="age">Age</label>
+        <input type="number" min="1" max="110"><br><br>
+        <label for="contact">Contact</label>
+        <input type="tel" pattern="[0-9]{10}"><br><br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+        <label for="skills">Skills</label>
+        <input type="checkbox" name="skills" value="html">
+        <label for="html">HTML</label>
+        <input type="checkbox" name="skills" value="javascript">
+        <label for="javascript">Javascript</label>
+        <input type="checkbox" name="skills" value="mern">
+        <label for="mern">MERN</label><br><br>
+        <label for="address">Address</label>
+        <textarea name="address"></textarea><br><br>
+
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>

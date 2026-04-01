@@ -1,0 +1,5 @@
+* { margin: 0; padding: 0; }
+        body { font-family: Arial; text-align: center; background: #e8f0fe; }
+        nav { background: purple; padding: 10px; }
+        nav a { color: white; margin: 10px; text-decoration: none; font-weight: bold; }
+        h1 { color: purple; }
