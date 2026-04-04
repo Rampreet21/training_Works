@@ -1,39 +1,77 @@
 const express = require("express");
-const path = require("path")
-// const fs = require("fs")
-// const fs = require("fs").promises
-
-// const home = fs.readFileSync('./home.html', 'utf-8')
-// const about = fs.readFileSync('./about.html', 'utf-8')
-// const contact = fs.readFileSync('./contact.html', 'utf-8')
+const path = require("path");
+const mongoose = require("mongoose");
 
 const server = express();
-let port = 3000;
+const port = 3000;
 
-server.use(express.static('public'))
+// Middleware
+server.use(express.static('public'));
 server.use(express.json());
 
+// Routes (HTML)
+server.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'home.html'));
+});
 
-server.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'home.html'))
+server.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'about.html'));
+});
+
+server.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'contact.html'));
+});
+
+// 🔹 Schema + Model
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String
+});
+
+const User = mongoose.model("User", userSchema);
+
+// 🔹 MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/dbData')
+.then(() => {
+    console.log('✅ Database Connected');
+
+    server.listen(port, () => {
+        console.log("🚀 SERVER RUNNING ON: http://localhost:" + port);
+    });
 })
+.catch(err => {
+    console.error('❌ Database connection error:', err);
+});
 
-server.get('/about',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'about.html'))
-})
+// 🔹 Register API (INSERT DATA)
+server.post('/user/register', async (req, res) => {
+    try {
+        const data = req.body;
 
-server.get('/contact',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'contact.html'))
-})
+        const user = new User(data);
+        await user.save();
 
-server.post('/user/register',(req,res)=>{
-    let data = req.body;
-    console.log(data)
-    res.send("<b> User Registerd </b>")
-})
+        console.log("User Saved:", data);
 
-server.get('/products',(req,res)=>{
-    res.send("Post Request")
-})
+        res.send("<b> User Registered Successfully </b>");
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error saving user");
+    }
+});
 
-server.listen(port, ()=>console.log("SERVER IS RUNING ON: http://localhost:" + port));
+// 🔹 Get All Users (READ DATA)
+server.get('/users', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (err) {
+        res.status(500).send("Error fetching users");
+    }
+});
+
+// Extra route
+server.get('/products', (req, res) => {
+    res.send("Products Page");
+});
